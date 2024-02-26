@@ -1,51 +1,52 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>User Data</title>
-</head>
-<style>
-div.ex {
-	text-align: right width:300px;
-	padding: 10px;
-	border: 5px solid grey;
-	margin: 0px
-}
-</style>
-<body>
-	<h1>Student data Form</h1>
-	<div class="ex">
-		<form action="registrationController" method="post">
-			<table style="with: 50%">
-				<tr>
-					<td>Student Name</td>
-					<td><input type="text" name="fullname"/></td>
-				</tr>
-				<tr>
-					<td>Student Address</td>
-					<td><input type="text" name="address"/></td>
-				</tr>
-				<tr>
-					<td>Student Age</td>
-					<td><input type="text" name="age"/></td>
-				</tr>
-				<tr>
-					<td>Student Qualification</td>
-					<td><input type="text" name="qual"/></td>
-				</tr>
-				<tr>
-					<td>Student Percentage</td>
-					<td><input type="text" name="percent"/></td>
-				</tr>
-				<tr>
-					<td>Year Passed</td>
-					<td><input type="text" name="yop"/></td>
-				</tr>
-			</table>
-			<input type="submit" value="register"/>
-		</form>
-	</div>
-</body>
-</html>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.jdevs</groupId>
+  <artifactId>studentapp</artifactId>
+  <version>2.2-SNAPSHOT</version>
+  <packaging>war</packaging>
+  <build>
+    <extensions>
+    <extension>
+      <groupId>io.packagecloud.maven.wagon</groupId>
+      <artifactId>maven-packagecloud-wagon</artifactId>
+      <version>0.0.6</version>
+    </extension>
+  </extensions>
+    <sourceDirectory>src</sourceDirectory>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.3</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>2.6</version>
+        <configuration>
+          <warSourceDirectory>WebContent</warSourceDirectory>
+          <failOnMissingWebXml>false</failOnMissingWebXml>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  <distributionManagement>
+  <repository>
+    <id>packagecloud-raghudevops34</id>
+    <url>packagecloud+https://packagecloud.io/test-user/myrepo</url>
+  </repository>
+  <snapshotRepository>
+    <id>packagecloud-raghudevops34</id>
+    <url>packagecloud+https://packagecloud.io/test-user/myrepo</url>
+  </snapshotRepository>
+</distributionManagement>
+  <dependencies>
+  	<dependency>
+  		<groupId>javax.servlet</groupId>
+  		<artifactId>javax.servlet-api</artifactId>
+  		<version>3.0.1</version>
+  	</dependency>
+  </dependencies>
+</project>
